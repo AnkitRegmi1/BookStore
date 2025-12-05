@@ -1,0 +1,215 @@
+/* ============================================
+   AUTH PAGES STYLES
+   Login & Register Split-Screen Layout
+   ============================================ */
+
+/* --- AUTH SPLIT SCREEN LAYOUT --- */
+.auth-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 80px);
+    background-color: var(--bg-primary);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+/* Left Side - Image */
+.auth-image-side {
+    background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+}
+
+/* Right Side - Form Container */
+.auth-form-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--bg-secondary);
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-box h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.auth-box p {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- INPUT GROUP STYLES --- */
+.input-group-wrapper {
+    margin-bottom: 18px;
+}
+
+/* The container that looks like one unified box */
+.input-group {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--bg-primary);
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    min-height: 50px;
+}
+
+.input-group:focus-within {
+    border-color: var(--accent-primary);
+}
+
+/* The "Label" part on the left - uniform sizing */
+.input-label-box {
+    padding: 14px 18px;
+    background-color: #1a1a1a;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-right: 1px solid #333;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    flex-shrink: 0;
+}
+
+/* The actual Input field on the right - uniform styling */
+.input-field-styled {
+    flex-grow: 1;
+    border: none;
+    background: #ffffff !important;
+    padding: 14px 18px;
+    color: #000000 !important;
+    font-size: 1rem;
+    outline: none;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+/* Override browser autofill styling - force white background and black text */
+.input-field-styled:-webkit-autofill,
+.input-field-styled:-webkit-autofill:hover,
+.input-field-styled:-webkit-autofill:focus,
+.input-field-styled:-webkit-autofill:active,
+input[type="password"].input-field-styled:-webkit-autofill,
+input[type="password"].input-field-styled:-webkit-autofill:hover,
+input[type="password"].input-field-styled:-webkit-autofill:focus,
+input[type="password"].input-field-styled:-webkit-autofill:active,
+input[type="email"].input-field-styled:-webkit-autofill,
+input[type="email"].input-field-styled:-webkit-autofill:hover,
+input[type="email"].input-field-styled:-webkit-autofill:focus,
+input[type="email"].input-field-styled:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+    -webkit-text-fill-color: #000000 !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    caret-color: #000000 !important;
+}
+
+/* Ensure password and email inputs also have white background */
+input[type="password"].input-field-styled,
+input[type="email"].input-field-styled {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.input-field-styled::placeholder {
+    color: #999;
+    opacity: 0.8;
+}
+
+/* Address textarea in register form */
+.auth-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    resize: vertical;
+}
+
+.auth-box textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+/* Button and Link Styles */
+.btn-full {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-full:hover {
+    transform: translateY(-1px);
+}
+
+.auth-switch-link {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-secondary);
+}
+
+.auth-switch-link a {
+    color: var(--accent-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+    .auth-split-layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .auth-image-side {
+        display: none;
+    }
+
+    .auth-form-side {
+        padding: 20px;
+    }
+
+    .auth-box {
+        max-width: 100%;
+    }
+
+    .auth-box h2 {
+        font-size: 1.5rem;
+    }
+}
+

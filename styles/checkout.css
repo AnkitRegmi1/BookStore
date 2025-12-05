@@ -1,0 +1,382 @@
+/* ============================================
+   CHECKOUT PAGE STYLES
+   Checkout Grid Layout, Forms, Payment Inputs, Summary
+   ============================================ */
+
+/* --- CHECKOUT LAYOUT (2-Column Grid) --- */
+/* Desktop only - 1024px+ */
+@media screen and (min-width: 1024px) {
+    .checkout-layout {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 40px;
+        align-items: start;
+        margin-top: 20px;
+    }
+}
+
+/* --- LEFT COLUMN: Form Sections --- */
+.checkout-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+/* Address Box Style */
+.address-box {
+    background-color: var(--bg-primary);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    color: var(--text-secondary);
+}
+
+.address-box p {
+    margin: 5px 0;
+}
+
+.address-box strong {
+    color: var(--text-primary);
+}
+
+/* Form Fields Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+/* --- RIGHT COLUMN: Summary Sidebar --- */
+.checkout-summary-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+/* Re-using .summary-card style from cart, but adding item list style */
+.checkout-items-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.checkout-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkout-item img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.checkout-item .item-info {
+    flex-grow: 1;
+}
+
+.checkout-item .title {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.checkout-item .qty {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.checkout-item .price {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.summary-totals {
+    margin-bottom: 20px;
+}
+
+/* Reuse summary-card from cart.css */
+.summary-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.summary-card h3 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-top: 0;
+    color: var(--text-primary);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+.summary-row.total {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.btn-checkout {
+    padding: 16px 24px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-checkout:hover {
+    background-color: #FFD54F !important;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+}
+
+/* --- SUCCESS PAGE STYLING --- */
+.success-page {
+    text-align: center !important;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-page h2 {
+    color: var(--accent-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center !important;
+    width: 100%;
+}
+
+.success-page p {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: center !important;
+    width: 100%;
+}
+
+.success-page .summary {
+    color: var(--text-secondary);
+    margin-top: 20px;
+    text-align: center !important;
+    width: 100%;
+}
+
+.success-page .summary strong {
+    color: var(--text-primary);
+    text-align: center !important;
+}
+
+/* Success page button styling - More specific to override other styles */
+.success-page .btn-checkout,
+.success-page .btn-accent,
+.success-page a.btn-checkout,
+.success-page a.btn-accent {
+    display: inline-block !important;
+    background-color: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    padding: 16px 24px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px !important;
+    text-align: center !important;
+    cursor: pointer;
+}
+
+.success-page .btn-checkout:hover,
+.success-page .btn-accent:hover,
+.success-page a.btn-checkout:hover,
+.success-page a.btn-accent:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+    color: var(--bg-primary) !important;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .checkout-forms {
+        gap: 20px;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-row .form-group {
+        min-width: 100%;
+    }
+
+    .checkout-summary-sidebar {
+        position: static;
+    }
+
+    .success-page {
+        padding: 40px 15px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .success-page h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .success-page p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .success-page .btn-checkout,
+    .success-page .btn-accent {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto 0;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+    .form-section {
+        padding: 15px;
+    }
+
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .form-row {
+        flex-wrap: wrap;
+    }
+
+    .form-row .form-group {
+        min-width: 200px;
+    }
+}
+

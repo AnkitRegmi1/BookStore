@@ -1,0 +1,460 @@
+/* ============================================
+   HOME PAGE STYLES
+   Hero Carousel & Featured Section
+   ============================================ */
+
+/* --- HERO CAROUSEL --- */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+    margin-top: 20px;
+}
+
+.hero-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.book-slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    height: 450px;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    gap: 0;
+    padding: 0;
+}
+
+/* Left Column: Text Content */
+.hero-text {
+    flex: 1;
+    padding: 0 50px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.book-slide-content {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.book-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin: 0;
+    text-align: left;
+}
+
+.book-author {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0;
+    text-align: left;
+}
+
+.book-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 42rem;
+    text-align: left;
+}
+
+.hero-cta {
+    align-self: flex-start;
+    padding: 0.75rem 1.8rem;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+/* Right Column: Image Container */
+.hero-image-container {
+    flex: 1;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 8px 8px 0;
+    display: block;
+}
+
+/* Legacy class - keep hidden */
+.book-slide-image {
+    display: none;
+}
+
+/* Navigation Controls */
+.hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 999px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.hero-nav--prev {
+    left: 1.5rem;
+}
+
+.hero-nav--next {
+    right: 1.5rem;
+}
+
+.hero-nav:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* Dots Indicator */
+.hero-dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+}
+
+.hero-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-primary);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hero-dot--active {
+    background: var(--accent-primary);
+}
+
+/* --- BEST SELLERS SECTION --- */
+.bestseller-month-section {
+    margin-top: 40px;
+    padding: 32px 40px 40px;
+    background-color: #000000;
+}
+
+.bestseller-month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.bestseller-month-title {
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.bestseller-month-see-more {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.bestseller-month-see-more:hover {
+    text-decoration: underline;
+}
+
+/* Desktop Grid - 5 columns */
+@media screen and (min-width: 1024px) {
+    .bestseller-month-scroller {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+}
+
+/* Best Seller Cards */
+.bestseller-card {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    background-color: #111111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bestseller-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
+}
+
+.bestseller-card-image {
+    height: 70%;
+    overflow: hidden;
+}
+
+.bestseller-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bestseller-card-body {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bestseller-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.bestseller-card-author {
+    font-size: 0.8rem;
+    color: #cccccc;
+    margin: 0;
+}
+
+.bestseller-card-rating {
+    font-size: 0.8rem;
+    color: #facc15;
+    margin: 2px 0 0;
+}
+
+.bestseller-card-rating span {
+    color: #ffffff;
+    margin-left: 4px;
+}
+
+.bestseller-card-meta {
+    font-size: 0.7rem;
+    color: #888888;
+    margin: 0;
+}
+
+.bestseller-card-readmore {
+    margin-top: auto;
+    align-self: flex-end;
+    font-size: 0.75rem;
+    color: #facc15;
+    text-decoration: none;
+}
+
+.bestseller-card-readmore:hover {
+    text-decoration: underline;
+}
+
+/* Add to Cart Button Styling (Yellow - matches catalog.php) */
+.bestseller-card-add,
+.btn-add {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.bestseller-card-add:hover,
+.btn-add:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+    /* Hero Carousel */
+    .hero-carousel {
+        height: 100vh;
+    }
+
+    .book-slide {
+        flex-direction: column;
+        align-items: stretch;
+        height: 100vh;
+    }
+
+    .hero-text {
+        flex: 1;
+        width: 100%;
+        padding: 0;
+    }
+
+    .book-slide-content {
+        flex: 1;
+        padding: 40px;
+        max-width: 100%;
+    }
+
+    /* Hide image on mobile */
+    .hero-image-container {
+        display: none !important;
+    }
+
+    .book-title {
+        font-size: 2rem;
+    }
+
+    .book-author {
+        font-size: 1rem;
+    }
+
+    .book-description {
+        font-size: 0.9rem;
+    }
+
+    .hero-nav {
+        border: 2px solid var(--text-primary);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .hero-nav--prev {
+        left: 20px;
+    }
+
+    .hero-nav--next {
+        right: 20px;
+    }
+
+    .hero-nav:hover {
+        background: var(--accent-primary);
+        color: var(--bg-primary);
+    }
+
+    .hero-dots {
+        bottom: 30px;
+        gap: 10px;
+    }
+
+    .hero-dot {
+        width: 12px;
+        height: 12px;
+        border: 2px solid var(--text-primary);
+    }
+
+    .hero-dot--active {
+        border-color: var(--accent-primary);
+    }
+
+    /* Best Sellers Section */
+    .bestseller-month-section {
+        padding: 20px 12px 24px;
+    }
+
+    .bestseller-month-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .bestseller-month-title {
+        font-size: 1.4rem;
+    }
+
+    .bestseller-month-scroller {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        width: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+    .bestseller-month-scroller {
+        display: grid;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* 2 columns on medium mobile */
+    @media screen and (min-width: 481px) and (max-width: 640px) {
+        .bestseller-month-scroller {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* 3 columns on large mobile */
+    @media screen and (min-width: 641px) and (max-width: 767px) {
+        .bestseller-month-scroller {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* 4 columns on tablet */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .bestseller-month-scroller {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .book-slide {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .hero-image-container {
+            display: flex !important;
+            flex: 1;
+            max-width: 50%;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+    }
+}
+
